@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Laboratorio01U2_INTELIGENCIA_NEGOCIOS}
+\author{edwartbalcon}
+\date{Septiembre 2021}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Caratula}
+
+\begin{titlepage}
+\begin{center}
+\begin{Large}
+\textbf{UNIVERSIDAD PRIVADA DE TACNA} \\
+\end{Large}
+\vspace*{-0.025in}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=6cm]{./images/logo_UPT}
+\end{center}
+\end{figure}
+\vspace*{-0.025in}
+\begin{Large}
+\textbf{FACULTAD DE INGENIERIA} \\
+\end{Large}
+\vspace*{0.05in}
+\begin{Large}
+\textbf{Escuela Profesional de Ingeniería de Sistema} \\
+\end{Large}
+
+
+\vspace*{0.4in}
+
+\vspace*{0.1in}
+\begin{Large}
+\textbf{Informe de laboratorio 04: Crear una Dimensión Regular con SQL
+Server Analysis Services} \\
+\end{Large}
+
+\vspace*{0.3in}
+\begin{Large}
+\textbf{Curso: Inteligencia de negocios} \\
+\end{Large}
+
+\vspace*{0.3in}
+\begin{Large}
+\textbf{DOCENTE: Ing. Patrick Cuadros Quiroga} \\
+\end{Large}
+
+\vspace*{0.2in}
+\vspace*{0.1in}
+\begin{large}
+
+\begin{Large}
+\textbf{Alumno: Balcon Coahila, Edwart Juan\hfill	(2013046516) } \\
+\end{Large}
+
+\vspace*{0.15in}
+\begin{Large}
+\textbf{Tacna – Perú} \\
+\end{Large}
+
+\vspace*{0.05in}
+\begin{Large}
+\textbf{2021 } \\
+\end{Large}
+
+\end{large}
+\end{center}
+
+\end{titlepage}
+
+%%INICIO Resumen
+\section{Onjetivos}
+Crear una Dimensión sobre un Cubo Multidimensional en SQL Server Analysis Services para que usuarios
+finales puedan explotar la información.
+%%FIN Resumen
+
+%%INICIO Resumen
+\section{Dimension Regular }
+Las dimensiones regulares representan datos descriptivos que proporcionan contexto para datos modelados en dimensiones de medida. Una dimensión regular se divide en grupos de información denominados niveles. A su vez, los distintos niveles se pueden organizar en jerarquías. Por ejemplo, la dimensión de un producto puede contener los niveles Product Line, Product Type y Product organizados en una única jerarquía denominada Product. Otro ejemplo es una dimensión de tiempo que tiene los niveles Year, Quarter, Month, Week y Day, organizados en dos jerarquías. La primera jerarquía YQMD contiene los niveles Year, Quarter, Month y Day, la otra jerarquía YWD contiene los niveles Year, Week y Day.
+\\
+\\
+La definición más sencilla de un nivel consta de una clave de empresa y un título, donde cada uno de estos elementos hace referencia a un elemento de consulta. Una instancia (o fila) de un nivel se define como miembro de ese nivel. Se identifica por un nombre exclusivo de miembro, que contiene los valores de las claves de empresa de los niveles actual y superior. Por ejemplo, [gosales].[Products].[ProductsOrg].[Product]->[All Products].[1].[1].[2] identifica un miembro que se encuentra en el cuarto nivel, Product, de la jerarquía ProductsOrg de la dimensión [Products] que está en el espacio de nombres [gosales]. El título para este producto es TrailChef Canteen, que es el nombre que aparece en el árbol de metadatos y en el informe.
+\\
+\\
+El nivel se puede definir como exclusivo si la clave de empresa es suficiente para identificar cada conjunto de datos para un nivel. En el modelo Great Outdoors Sales, los miembros del nivel Product no necesitan la definición de tipo Product porque muchos tipos de producto diferentes no tienen números de producto asignados. Un nivel que no está definido como exclusivo es similar a un determinante que utiliza claves de varias partes porque se necesitan claves de niveles superiores de granularidad. Consulte: Utilización de determinantes con claves de varias partes. Si miembros de los miembros ancestro no son exclusivos pero el nivel se ha identificado como exclusivo, los datos para los miembros no exclusivos se informan como un único miembro. Por ejemplo, si City se define como exclusivo y se identifica por el nombre, los datos para London, England y London, Canada, se combinarán.
+%%FIN Resumen
+
+%%----------------------------------------------------------------------------------------------------------------------------------------------------------
+%%INICIO Marco Teórico
+\section{Procedimiento}
+
+Tomando como base el laboratorio anterior se construyo un cubo básico Multidimensional, pero se tenia
+dificultad al momento de explotar la información. Este detalle se debe a que no tuvimos un manejo más
+personalizado de los atributos de las dimensiones. En este laboratorio se abordará como crear y configurar
+una dimensión regular en Analysis Services.
+
+\include{sections/Task01}
+\include{sections/Task02}
+\include{sections/Task03}
+
+
+\end{document}
